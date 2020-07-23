@@ -1,5 +1,4 @@
 const axios = require('axios');
-const { response } = require('express');
 const API_KEY = '060a59d50b9d08a9a9a80ba4351047af';
 const Weather = require('../model/Weather');
 
@@ -24,7 +23,7 @@ exports.getWeather = (req, res) => {
       const { name: location } = response.data;
 
       res.render('index', {
-        weather: `It is currently${temperature} in ${location}`,
+        weather: `It is currently ${temperature} °C in ${location}`,
       });
 
     }).catch((error) => {
